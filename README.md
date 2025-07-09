@@ -7,9 +7,9 @@ As part of my cybersecurity training, I used SQL queries to investigate potentia
 ## Retrieve After Hours Failed Login Attempts
 To identify failed login attempts made outside of normal business hours (after 6:00 PM), I used the following SQL query:
 
-<pre> ```SELECT *
+<pre> SELECT *
 FROM log_in_attempts
-WHERE login_time > '18:00:00' AND success = FALSE;``` </pre>
+WHERE login_time > '18:00:00' AND success = FALSE; </pre>
 
 
 # Cybersecurity SQL Investigations Portfolio
@@ -19,45 +19,45 @@ This query helped locate users who failed to log in after hours, which could ind
 ## Retrieve Login Attempts on Specific Dates
 To investigate login activity around a suspicious event, I queried login attempts made on May 8 and May 9, 2022:
 
-<pre> ```SELECT * 
+<pre> SELECT * 
 FROM log_in_attempts 
-WHERE login_date = '2022-05-09' OR login_date = '2022-05-08';``` </pre>
+WHERE login_date = '2022-05-09' OR login_date = '2022-05-08'; </pre>
 
 This allowed me to isolate activity for dates of interest in the security investigation.
 
 ## Retrieve Login Attempts Outside of Mexico
 To exclude login attempts that originated in Mexico (including values like 'MEX' or 'MEXICO'), I used:
 
-<pre> ```SELECT * 
+<pre> SELECT * 
 FROM log_in_attempts 
-WHERE NOT country LIKE 'MEX%';``` </pre>
+WHERE NOT country LIKE 'MEX%'; </pre>
 
 This filter identified logins that may have come from foreign or unrecognized locations.
 
 ## Retrieve Employees in Marketing
 To locate employees in the Marketing department who work in any office located in the East building, I used:
 
-<pre> ```SELECT * 
+<pre> SELECT * 
 FROM employees 
-WHERE department = 'Marketing' AND office LIKE 'East%';``` </pre>
+WHERE department = 'Marketing' AND office LIKE 'East%'; </pre>
 
 This helped identify users whose devices required specific updates in that department and building.
 
 ## Retrieve Employees in Finance or Sales
 For a scheduled computer update, I retrieved employees from either the Finance or Sales department using:
 
-<pre> ```SELECT * 
+<pre> SELECT * 
 FROM employees 
-WHERE department = 'Finance' OR department = 'Sales';``` </pre>
+WHERE department = 'Finance' OR department = 'Sales'; </pre>
 
 This ensured that only relevant departments were included in the maintenance task.
 
 ## Retrieve All Employees Not in IT
 To check employees whose devices still needed updates (excluding IT, which was already completed), I used:
 
-<pre> ```SELECT * 
+<pre> SELECT * 
 FROM employees 
-WHERE NOT department = 'Information Technology';``` </pre>
+WHERE NOT department = 'Information Technology'; </pre>
 
 This helped focus efforts on departments that hadn’t been updated yet.
 
