@@ -11,9 +11,6 @@ To identify failed login attempts made outside of normal business hours (after 6
 FROM log_in_attempts
 WHERE login_time > '18:00:00' AND success = FALSE; </pre>
 
-
-# Cybersecurity SQL Investigations Portfolio
-
 This query helped locate users who failed to log in after hours, which could indicate attempted unauthorized access.
 
 ## Retrieve Login Attempts on Specific Dates
