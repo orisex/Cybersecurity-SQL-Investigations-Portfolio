@@ -7,7 +7,10 @@ As part of my cybersecurity training, I used SQL queries to investigate potentia
 ## Retrieve After Hours Failed Login Attempts
 To identify failed login attempts made outside of normal business hours (after 6:00 PM), I used the following SQL query:
 
-<pre> ```sql SELECT * FROM log_in_attempts WHERE login_time > '18:00:00' AND success = FALSE; ``` </pre>
+<pre> SELECT *
+FROM log_in_attempts
+WHERE login_time > '18:00:00' AND success = FALSE; <pre>
+
 
 # Cybersecurity SQL Investigations Portfolio
 
